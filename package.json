@@ -6,8 +6,11 @@
     "backend"
   ],
   "scripts": {
-    "dev:frontend": "yarn workspace frontend dev",
-    "dev:backend": "yarn workspace backend dev",
-    "build": "yarn workspaces foreach run build"
+  "frontend": "yarn workspace frontend dev",
+  "backend": "yarn workspace backend dev",
+  "dev": "concurrently \"yarn backend\" \"yarn frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }
